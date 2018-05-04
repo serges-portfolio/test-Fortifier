@@ -1,0 +1,160 @@
+@import url(layout.css);
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #6fcdff;
+  z-index: 1;
+  position: relative; }
+  .header__container {
+    display: block; }
+    .header__container:first-child {
+      background-color: #51afe1; }
+  .header__title {
+    margin-top: 54px;
+    margin-bottom: 44px;
+    padding: 0 73px;
+    color: #ffffff;
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px; }
+  .header__add-movie {
+    margin-left: 100px;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 36px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer; }
+    .header__add-movie:hover {
+      margin-top: 3px;
+      transition: 0.5s; }
+  .header__plus-icon {
+    display: inline-block;
+    margin: 48px 10px 0 0;
+    padding: 2px 13px;
+    font-size: 24px;
+    color: #6fcdff;
+    background-color: #ffffff;
+    border-radius: 50%; }
+  .header__add-movie:hover .header__plus-icon {
+    color: #ff8774;
+    transition: 0.4s; }
+  .header__add-button-name {
+    display: inline-block; }
+  .header__add-movie:hover .header__add-button-name {
+    color: #fadad0;
+    transition: 0.4s; }
+
+.movie-info {
+  display: block;
+  margin-top: 50px;
+  /*&__description {
+
+  }*/ }
+  .movie-info__description-container {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    max-width: 1171px;
+    padding-top: 29px;
+    padding-left: 106px;
+    box-shadow: 0 10px 45px #d0e0eb;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 0; }
+  .movie-info__info-name {
+    margin: 0;
+    color: #010101;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 36px;
+    text-transform: uppercase; }
+  .movie-info__enter-field {
+    width: 500px;
+    min-height: 50px;
+    border-radius: 5px;
+    border: 1px solid #d0e0eb;
+    background-color: #ffffff; }
+    .movie-info__enter-field.-big-field {
+      min-height: 100px; }
+  .movie-info__navigation-buttons-container {
+    margin-top: 27px; }
+  .movie-info__navigation-button {
+    margin-top: 27px;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 36px;
+    letter-spacing: 1.05px;
+    outline: none;
+    cursor: pointer; }
+    .movie-info__navigation-button:first-child {
+      box-shadow: 0 5px 10px #ff6e5d, 0 1px 0 #ff7e70;
+      border: 1px solid #ff695a;
+      background-color: #ff7e70; }
+    .movie-info__navigation-button:nth-child(2) {
+      margin-left: 21px;
+      box-shadow: 0 5px 10px #6fcdff, 0 1px 0 #6fcdff;
+      border: 1px solid #2fa5e1;
+      background-color: #6ecdfd; }
+    .movie-info__navigation-button:hover {
+      transform: scale(1.1);
+      transition: 0.5s; }
+  .movie-info__please-show {
+    margin-top: -880px;
+    position: absolute; }
+  .movie-info__box {
+    display: block;
+    max-width: 1171px;
+    min-height: 606px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: rgba(18, 19, 23, 0.4);
+    position: unset; }
+  .movie-info__poster {
+    display: block;
+    width: 310px;
+    height: 442px;
+    margin: 82px 52px 107px;
+    float: left; }
+  .movie-info__definition {
+    display: block;
+    margin-top: 60px;
+    float: left; }
+  .movie-info__film-description {
+    display: block;
+    max-width: 555px; }
+  .movie-info__comments-container {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    max-width: 1171px;
+    box-shadow: 0 10px 45px #d0e0eb;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff; }
+  .movie-info__coments {
+    margin-top: 0;
+    padding: 46px 0; }
+
+.tumbler {
+  margin-top: -50px;
+  margin-bottom: 50px;
+  transition: 0.5s;
+  position: relative; }
+
+.rotate {
+  transform: rotate(45deg); }
+
+/*# sourceMappingURL=0style.css.map */

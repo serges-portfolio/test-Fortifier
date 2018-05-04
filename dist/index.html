@@ -1,26 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="handleMovieList">
 <head>
-	<meta charset="UTF-8">
-	<title>Start</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<link rel="icon" href="favicon.png"/>
-	<link rel="stylesheet" href="css/0style.css" />   <!--change-->
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <link rel="icon" href="favicon.png"/>
+    <link rel="stylesheet" href="css/0style.css"/>   <!--change-->
 </head>
 <body>
-	<header>
-		<div>
-			<h1>Films library</h1>
-		</div>
-		<div>
-			<button>
-				<span>+</span>Add new film
-			</button>
-		</div>
-	</header>
-	<main>
-	</main>
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Films library</h1>
+            </div>
+            <div class="header__container">
+                <button class="header__add-movie" id="button">
+                    <span class="header__plus-icon">+</span>
+                    <p class="header__add-button-name">Add new film</p>
+                </button>
+            </div>
+        </header>
+
+        <!--window for description-->
+        <main class="movie-info" ng-controller="addMovie">
+
+
+
+
+            <section class="movie-info__please-show">
+            <form action="#" class="movie-info__description-container" ng-submit="addNew()">
+
+                    <p class="movie-info__info-name">title</p>
+                    <input type="text" class="movie-info__enter-field" ng-model="title">
+                    <p class="movie-info__info-name">year</p>
+                    <input type="text" class="movie-info__enter-field" ng-model="year">
+                    <p class="movie-info__info-name">country</p>
+                    <input type="text" class="movie-info__enter-field" ng-model="country">
+                    <p class="movie-info__info-name">genre</p>
+                    <input type="text" class="movie-info__enter-field" ng-model="genre">
+                    <p class="movie-info__info-name">actors</p>
+                    <input type="text" class="movie-info__enter-field" ng-model="actors">
+                    <p class="movie-info__info-name">poster (link)</p>
+                    <input type="text" class="movie-info__enter-field" ng-model="poster">
+                    <p class="movie-info__info-name">description</p>
+                    <input type="text" class="movie-info__enter-field -big-field" ng-model="description">
+
+
+                <div class="movie-info__navigation-buttons-container">
+                    <button class="movie-info__navigation-button" >Cancel</button>
+                    <button class="movie-info__navigation-button" ng-click="addNew()">Add</button>
+                </div>
+            </form>
+            </section>
+            <section class="movie-info__box" ng-repeat="filmInfo in templ track by $index">
+                <img ng-src="{{filmInfo.poster}}" class="movie-info__poster">
+                <div class="movie-info__definition">
+                <h2>{{filmInfo.title}}</h2>
+                <p class="movie-info__film-description">{{filmInfo.description}}</p>
+
+                <table class="movie-info__table">
+                    <tr>
+                        <td>country</td>
+                        <td>{{filmInfo.country}}</td>
+                    </tr>
+                    <tr>
+                        <td>year</td>
+                        <td>{{filmInfo.year}}</td>
+                    </tr>
+                    <tr>
+                        <td>genre</td>
+                        <td>{{filmInfo.genre}}</td>
+                    </tr>
+                    <tr>
+                        <td>actors</td>
+                        <td>{{filmInfo.actors}}</td>
+                    </tr>
+                </table>
+                <button>Delete</button>
+                <button>Edit</button>
+                </div>
+                <section class="movie-info__comments-container">
+                    <p class="movie-info__coments">Comments</p>
+                </section>
+            </section>
+
+        </main>
+        <!--END window for description-->
+
+        <script>
+            var addButton = document.getElementById("button");
+            addButton.onclick = function () {
+                document.body.querySelector(".movie-info__please-show").classList.toggle("tumbler");
+                document.body.querySelector(".header__plus-icon").classList.toggle("rotate");
+            }
+
+        </script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+        <script src="js/app.js"></script>
 </body>
 </html>
