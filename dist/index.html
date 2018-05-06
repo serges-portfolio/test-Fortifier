@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="handleMovieList">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Start</title>
@@ -9,7 +9,7 @@
     <link rel="icon" href="favicon.png"/>
     <link rel="stylesheet" href="css/0style.css"/>   <!--change-->
 </head>
-<body>
+<body ng-app="handleMovieList">
         <header class="header">
             <div class="header__container">
                 <h1 class="header__title">Films library</h1>
@@ -23,7 +23,7 @@
         </header>
 
         <!--window for description-->
-        <main class="movie-info" ng-controller="addMovie">
+        <!--<main class="movie-info" ng-controller="addMovie">
 
 
 
@@ -54,7 +54,9 @@
             </form>
             </section>
             <section class="movie-info__box" ng-repeat="filmInfo in templ track by $index">
+&lt;!&ndash;
                 <img ng-src="{{filmInfo.poster}}" class="movie-info__poster">
+&ndash;&gt;
                 <div class="movie-info__definition">
                 <h2>{{filmInfo.title}}</h2>
                 <p class="movie-info__film-description">{{filmInfo.description}}</p>
@@ -85,6 +87,71 @@
                 </section>
             </section>
 
+        </main>-->
+        <main class="movie-info" ng-controller="addMovie">
+
+
+
+
+            <section class="movie-info__please-show">
+                <form action="#" class="movie-info__description-container" ng-submit="addRow()">
+
+                    <p class="movie-info__info-name">title</p>
+                    <input type="text" required="Title" class="movie-info__enter-field" ng-model="title">
+                    <p class="movie-info__info-name">year</p>
+                    <input type="text" required="Year" class="movie-info__enter-field" ng-model="year">
+                    <p class="movie-info__info-name">country</p>
+                    <input type="text" required="Country" class="movie-info__enter-field" ng-model="country">
+                    <p class="movie-info__info-name">genre</p>
+                    <input type="text" required="Genre" class="movie-info__enter-field" ng-model="genre">
+                    <p class="movie-info__info-name">actors</p>
+                    <input type="text" required="Actors" class="movie-info__enter-field" ng-model="actors">
+                    <p class="movie-info__info-name">poster (link)</p>
+                    <input type="text" required class="movie-info__enter-field" ng-model="poster">
+                    <p class="movie-info__info-name">description</p>
+                    <input type="text" required="Description" class="movie-info__enter-field -big-field" ng-model="description">
+
+
+                    <div class="movie-info__navigation-buttons-container">
+                        <button class="movie-info__navigation-button" >Cancel</button>
+                        <button class="movie-info__navigation-button" ng-click="addRow()">Add</button>
+                    </div>
+                </form>
+            </section>
+            <section class="movie-info__box" ng-repeat="filmInfo in companies">
+
+                 <img ng-src="{{filmInfo.poster}}" class="movie-info__poster">
+                
+                <div class="movie-info__definition">
+                    <h2>{{filmInfo.title}}</h2>
+                    <p class="movie-info__film-description">{{filmInfo.description}}</p>
+
+                    <table class="movie-info__table">
+                        <tr>
+                            <td>country</td>
+                            <td>{{filmInfo.country}}</td>
+                        </tr>
+                        <tr>
+                            <td>year</td>
+                            <td>{{filmInfo.year}}</td>
+                        </tr>
+                        <tr>
+                            <td>genre</td>
+                            <td>{{filmInfo.genre}}</td>
+                        </tr>
+                        <tr>
+                            <td>actors</td>
+                            <td>{{filmInfo.actors}}</td>
+                        </tr>
+                    </table>
+                    <button ng-click="deleteMovie()">Delete</button>
+                    <button>Edit</button>
+                </div>
+                <section class="movie-info__comments-container">
+                    <p class="movie-info__coments">Comments</p>
+                </section>
+            </section>
+
         </main>
         <!--END window for description-->
 
@@ -98,7 +165,7 @@
         </script>
         <script src="js/angular.min.js"></script>
         <script src="js/angular-route.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
         <script src="js/app.js"></script>
 </body>
 </html>
